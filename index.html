@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNest - Bringing Your Gadgets Back to Life</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- Background Effects -->
+    <div class="gradient-bg"></div>
+    <div class="particles" id="particles"></div>
+    
+    <!-- Page Loader -->
+    <div class="loader" id="loader">
+        <div style="width: 100px; height: 100px;">
+            <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_a2chheio.json" background="transparent" speed="1" loop autoplay></lottie-player>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header class="navbar fixed top-0 w-full z-50 px-6 py-6">
+        <div class="container mx-auto">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2 flex-shrink-0">
+                    <i class="fas fa-mobile-alt text-2xl" style="color: var(--primary-color);"></i>
+                    <span class="text-xl font-bold" style="color: var(--text-dark);">TechNest</span>
+                </div>
+                
+                <!-- Desktop Navigation - Centered -->
+                <nav class="hidden lg:flex items-center justify-center space-x-10 text-lg font-medium absolute left-1/2 transform -translate-x-1/2">
+                    <a href="#home" class="nav-link" style="color: var(--text-dark);">Home</a>
+                    <a href="#about" class="nav-link" style="color: var(--text-dark);">About</a>
+                    <a href="#services" class="nav-link" style="color: var(--text-dark);">Services</a>
+                    <a href="#pricing" class="nav-link" style="color: var(--text-dark);">Pricing</a>
+                    <a href="#contact" class="nav-link" style="color: var(--text-dark);">Contact</a>
+                </nav>
+                
+                <!-- Get Started Button -->
+                <div class="hidden lg:block flex-shrink-0">
+                    <button class="btn-glow px-6 py-2 rounded-full text-lg font-medium">
+                        Get Started
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-2xl" id="mobileMenuBtn">
+                    <i class="fas fa-bars" style="color: var(--text-dark);"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed top-0 left-0 w-80 h-full z-40 p-6 shadow-2xl" id="mobileMenu">
+        <button class="text-2xl mb-8" id="closeMobileMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="flex flex-col space-y-4">
+            <a href="#home" class="nav-link py-2" style="color: var(--text-dark);">Home</a>
+            <a href="#about" class="nav-link py-2" style="color: var(--text-dark);">About</a>
+            <a href="#services" class="nav-link py-2" style="color: var(--text-dark);">Services</a>
+            <a href="#pricing" class="nav-link py-2" style="color: var(--text-dark);">Pricing</a>
+            <a href="#contact" class="nav-link py-2" style="color: var(--text-dark);">Contact</a>
+            <button class="btn-glow px-6 py-2 rounded-full w-full">
+                Get Started
+            </button>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero-section min-h-screen flex items-center justify-center px-10 pt-[120px] relative overflow-hidden" style="background-image: url('assets/images/bg-img.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed;">
+        <!-- Black overlay -->
+        <div class="absolute inset-0 bg-black opacity-90"></div>
+        
+        <div class="container mx-auto relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="hero-content animate-from-left" data-aos="fade-right">
+                    <!-- Welcome text -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 mb-4" style="border-color: var(--primary-color);">
+                        <i class="fas fa-mobile-alt text-sm" style="color:var(--primary-color);"></i>
+                        <p class="text-sm font-semibold tracking-widest uppercase text-white">
+                            WELCOME TO TECHNEST
+                        </p>
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
+                        Bringing Your
+                        <span class="block" style="color: var(--primary-color);">Gadgets Back to Life</span>
+                    </h1>
+                    
+                    <p class="text-base mb-8 opacity-70 leading-relaxed text-white">
+                        Expert repair services for all your electronic devices. We bring your gadgets back to perfect working condition with fast, reliable service.
+                    </p>
+                    
+                    <button class="btn-glow px-8 py-4 font-semibold text-sm tracking-wider uppercase rounded transition-all" style="background-color: var(--primary-color); color: white;">
+                        GET STARTED <i class="fas fa-arrow-right ml-2 animate-bounce-x"></i>
+                    </button>
+                </div>
+                
+                <div class="hero-animation animate-from-right" data-aos="fade-left">
+                    <div class="relative">
+                        <img src="assets/images/Phone-13-1.png" alt="iPhone 13" class="w-100 h-auto rounded-3xl shadow-2xl object-cover " style="display: block; max-height: 500px; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="py-20 px-6" style="background: var(--light-bg);">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--text-dark);">Gadget Diagnostic</h3>
+                    <p style="color: var(--text-light);">Comprehensive device analysis to identify issues quickly and accurately.</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--text-dark);">Fast Repair Process</h3>
+                    <p style="color: var(--text-light);">Quick turnaround time with most repairs completed within 60 minutes.</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--text-dark);">Affordable Prices</h3>
+                    <p style="color: var(--text-light);">Competitive pricing with no hidden fees and transparent cost breakdown.</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--text-dark);">Years Experience</h3>
+                    <p style="color: var(--text-light);">Over 10 years of expertise in mobile repair and gadget restoration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6">
+        <div class="container mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                        Repairing Electronics Got Even
+                        <span class="block" style="color: var(--primary-color);">Better</span>
+                    </h2>
+                    <p class="text-lg mb-8 leading-relaxed" style="color: var(--text-light);">
+                        At TechNest, we revolutionize the electronic repair experience with cutting-edge technology, 
+                        certified technicians, and a commitment to excellence. Your satisfaction is our priority.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0" style="background: var(--primary-color);">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span style="color: var(--text-dark);">Certified technicians with manufacturer training</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0" style="background: var(--primary-color);">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span style="color: var(--text-dark);">Genuine parts and components</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0" style="background: var(--primary-color);">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span style="color: var(--text-dark);">90-day warranty on all repairs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0" style="background: var(--primary-color);">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span style="color: var(--text-dark);">Same-day service available</span>
+                        </li>
+                    </ul>
+                    <button class="btn-glow px-8 py-4 rounded-full font-semibold">
+                        <i class="fas fa-arrow-right mr-2"></i>Read More
+                    </button>
+                </div>
+                
+                <div class="relative" data-aos="fade-left">
+                    <div class="bg-white rounded-2xl p-2 shadow-xl">
+                        <img src="https://picsum.photos/seed/technician/600/400" alt="Technician" class="rounded-xl w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-6" style="background: var(--light-bg);">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    Repair & Upgrades Made
+                    <span class="block" style="color: var(--primary-color);">Easy</span>
+                </h2>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card-image">
+                        <img src="https://picsum.photos/seed/computer-repair/400/300" alt="Computer Repair">
+                        <div class="service-card-overlay">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-3">
+                                <i class="fas fa-laptop text-xl" style="color: var(--primary-color);"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white">Personal Computer</h3>
+                            <p class="text-white opacity-90">Repair Service</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="mb-6 leading-relaxed" style="color: var(--text-light);">
+                            Expert repair services for all types of personal computers including laptops, desktops, and all-in-one systems.
+                        </p>
+                        <button class="btn-glow w-full px-6 py-3 rounded-full font-semibold">
+                            <i class="fas fa-arrow-right mr-2"></i>Read More
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card-image">
+                        <img src="https://picsum.photos/seed/tablet-repair/400/300" alt="Tablet Repair">
+                        <div class="service-card-overlay">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-3">
+                                <i class="fas fa-tablet-alt text-xl" style="color: var(--primary-color);"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white">Tablet & iPad</h3>
+                            <p class="text-white opacity-90">Repair Service</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="mb-6 leading-relaxed" style="color: var(--text-light);">
+                            Professional tablet and iPad repair services including screen replacement, battery issues, and charging port repair.
+                        </p>
+                        <button class="btn-glow w-full px-6 py-3 rounded-full font-semibold">
+                            <i class="fas fa-arrow-right mr-2"></i>Read More
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card-image">
+                        <img src="https://picsum.photos/seed/mobile-repair/400/300" alt="Mobile Repair">
+                        <div class="service-card-overlay">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-3">
+                                <i class="fas fa-mobile-alt text-xl" style="color: var(--primary-color);"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white">Mobile Phone</h3>
+                            <p class="text-white opacity-90">Repair Service</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="mb-6 leading-relaxed" style="color: var(--text-light);">
+                            Complete mobile phone repair solutions for all brands including screen replacement, battery replacement, and water damage repair.
+                        </p>
+                        <button class="btn-glow w-full px-6 py-3 rounded-full font-semibold">
+                            <i class="fas fa-arrow-right mr-2"></i>Read More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Instant Estimate Section -->
+    <section id="pricing" class="py-20 px-6" style="background: var(--light-bg);">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    Select Your
+                    <span class="block" style="color: var(--primary-color);">Device Brand</span>
+                </h2>
+                <p class="text-lg" style="color: var(--text-light);">Choose your mobile brand to book a repair appointment</p>
+            </div>
+            
+            <!-- 6 Company Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <!-- Apple -->
+                <div class="company-card bg-white rounded-2xl p-8 shadow-lg cursor-pointer transition-all hover:shadow-xl text-center" onclick="selectCompany('Apple')" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: #f3f4f6;">
+                        <i class="fas fa-mobile-alt text-4xl" style="color: #000;"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" style="color: var(--text-dark);">Apple</h3>
+                    <p class="text-sm" style="color: var(--text-light);">iPhone Repair</p>
+                </div>
+                
+                <!-- Samsung -->
+                <div class="company-card bg-white rounded-2xl p-8 shadow-lg cursor-pointer transition-all hover:shadow-xl text-center" onclick="selectCompany('Samsung')" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: #dbeafe;">
+                        <i class="fas fa-mobile-alt text-4xl" style="color: #2563eb;"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" style="color: var(--text-dark);">Samsung</h3>
+                    <p class="text-sm" style="color: var(--text-light);">Galaxy Repair</p>
+                </div>
+                
+                <!-- Google Pixel -->
+                <div class="company-card bg-white rounded-2xl p-8 shadow-lg cursor-pointer transition-all hover:shadow-xl text-center" onclick="selectCompany('Google Pixel')" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: #fef3c7;">
+                        <i class="fas fa-mobile-alt text-4xl" style="color: #f59e0b;"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" style="color: var(--text-dark);">Google Pixel</h3>
+                    <p class="text-sm" style="color: var(--text-light);">Pixel Repair</p>
+                </div>
+                
+                <!-- OnePlus -->
+                <div class="company-card bg-white rounded-2xl p-8 shadow-lg cursor-pointer transition-all hover:shadow-xl text-center" onclick="selectCompany('OnePlus')" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: #fee2e2;">
+                        <i class="fas fa-mobile-alt text-4xl" style="color: #ef4444;"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" style="color: var(--text-dark);">OnePlus</h3>
+                    <p class="text-sm" style="color: var(--text-light);">OnePlus Repair</p>
+                </div>
+                
+                <!-- Xiaomi -->
+                <div class="company-card bg-white rounded-2xl p-8 shadow-lg cursor-pointer transition-all hover:shadow-xl text-center" onclick="selectCompany('Xiaomi')" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: #fce7f3;">
+                        <i class="fas fa-mobile-alt text-4xl" style="color: #ec4899;"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" style="color: var(--text-dark);">Xiaomi</h3>
+                    <p class="text-sm" style="color: var(--text-light);">Mi & Redmi Repair</p>
+                </div>
+                
+                <!-- OPPO -->
+                <div class="company-card bg-white rounded-2xl p-8 shadow-lg cursor-pointer transition-all hover:shadow-xl text-center" onclick="selectCompany('OPPO')" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: #d1fae5;">
+                        <i class="fas fa-mobile-alt text-4xl" style="color: #10b981;"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" style="color: var(--text-dark);">OPPO</h3>
+                    <p class="text-sm" style="color: var(--text-light);">OPPO Repair</p>
+                </div>
+            </div>
+            
+            <!-- Selected Brand Display -->
+            <div class="mb-8 p-6 rounded-xl text-center" style="background: white; display: none;" id="selectedBrandDisplay">
+                <p class="text-lg mb-2" style="color: var(--text-light);">Selected Brand:</p>
+                <h3 class="text-2xl font-bold" style="color: var(--primary-color);" id="selectedBrandName">-</h3>
+            </div>
+            
+            <!-- Book Appointment Button -->
+            <div class="text-center">
+                <button class="btn-glow px-12 py-4 rounded-full font-semibold text-lg" onclick="bookAppointment()">
+                    <i class="fas fa-calendar-check mr-2"></i>Book an Appointment
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        let selectedCompany = '';
+        
+        function selectCompany(company) {
+            selectedCompany = company;
+            
+            // Remove selected class from all cards
+            document.querySelectorAll('.company-card').forEach(card => {
+                card.style.border = '2px solid transparent';
+                card.style.transform = 'scale(1)';
+            });
+            
+            // Add selected style to clicked card
+            event.currentTarget.style.border = '2px solid var(--primary-color)';
+            event.currentTarget.style.transform = 'scale(1.02)';
+            
+            // Show selected brand display
+            document.getElementById('selectedBrandName').textContent = company;
+            document.getElementById('selectedBrandDisplay').style.display = 'block';
+        }
+        
+        function bookAppointment() {
+            if (!selectedCompany) {
+                alert('Please select a mobile brand first.');
+                return;
+            }
+            
+            alert('Appointment booking initiated for ' + selectedCompany + ' device.\n\nOur team will contact you shortly to schedule your repair!');
+        }
+    </script>
+
+    <!-- Reviews Section -->
+    <section class="py-20 px-6" style="background: var(--light-bg);">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    Positive Reviews From
+                    <span class="block" style="color: var(--primary-color);">Customers</span>
+                </h2>
+                <p class="text-lg" style="color: var(--text-light);">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dapibus justo ipsum, id pulvinar elit aliquet eu. Sed a lectus sapien. Sed lobortis porta odio.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                    </div>
+                    <p style="color: var(--text-light);" class="mb-6">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dapibus justo ipsum, id pulvinar elit aliquet eu. Sed a lectus sapien.
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/seed/customer1/50/50" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-semibold" style="color: var(--text-dark);">John Doe</p>
+                            <p style="color: var(--text-light);">Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                    </div>
+                    <p style="color: var(--text-light);" class="mb-6">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dapibus justo ipsum, id pulvinar elit aliquet eu. Sed a lectus sapien.
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/seed/customer2/50/50" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-semibold" style="color: var(--text-dark);">Jane Smith</p>
+                            <p style="color: var(--text-light);">Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                    </div>
+                    <p style="color: var(--text-light);" class="mb-6">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dapibus justo ipsum, id pulvinar elit aliquet eu. Sed a lectus sapien.
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/seed/customer3/50/50" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-semibold" style="color: var(--text-dark);">Mike Johnson</p>
+                            <p style="color: var(--text-light);">Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="py-12 px-6" style="background: var(--dark-bg); color: white;">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-mobile-alt text-2xl" style="color: var(--primary-color);"></i>
+                        <span class="text-xl font-bold">TechNest</span>
+                    </div>
+                    <p class="opacity-80">Your trusted partner for electronic repair services. We bring your devices back to life.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4" style="color: var(--primary-color);">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="opacity-80 hover:opacity-100 transition">Home</a></li>
+                        <li><a href="#about" class="opacity-80 hover:opacity-100 transition">About</a></li>
+                        <li><a href="#services" class="opacity-80 hover:opacity-100 transition">Services</a></li>
+                        <li><a href="#pricing" class="opacity-80 hover:opacity-100 transition">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4" style="color: var(--primary-color);">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="opacity-80 hover:opacity-100 transition">Computer Repair</a></li>
+                        <li><a href="#" class="opacity-80 hover:opacity-100 transition">Mobile Repair</a></li>
+                        <li><a href="#" class="opacity-80 hover:opacity-100 transition">Tablet Repair</a></li>
+                        <li><a href="#" class="opacity-80 hover:opacity-100 transition">Data Recovery</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4" style="color: var(--primary-color);">Contact</h4>
+                    <ul class="space-y-2 opacity-80">
+                        <li><i class="fas fa-phone mr-2"></i>+1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope mr-2"></i>info@technest.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>123 Tech Street, CA</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center opacity-80">
+                <p>&copy; 2024 TechNest. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
