@@ -22,6 +22,8 @@ body {
     color: var(--text-dark);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 /* Custom Cursor */
@@ -222,7 +224,7 @@ body {
 
 .service-card-image {
     position: relative;
-    height: 250px;
+    height: 220px;
     overflow: hidden;
 }
 
@@ -816,13 +818,42 @@ body {
 
 /* Mobile Menu */
 .mobile-menu {
-    transform: translateX(-100%);
+    transform: translateX(100%);
     transition: transform 0.3s ease;
     background: white;
+    z-index: 60;
 }
 
 .mobile-menu.active {
     transform: translateX(0);
+}
+
+/* Force mobile menu links to always be black */
+.mobile-menu .nav-link {
+    color: #000000 !important;
+}
+
+.mobile-menu .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 55;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Floating Animation */
@@ -938,6 +969,12 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+    }
+    
     .hero-section h1 {
         font-size: 2.5rem;
     }
@@ -948,6 +985,37 @@ body {
     
     .pricing-card {
         margin-bottom: 20px;
+    }
+    
+    /* Fix hero animation overflow on mobile */
+    .hero-animation {
+        height: auto;
+        min-height: 400px;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    /* Ensure all sections fit viewport */
+    section {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    
+    /* Fix navbar on mobile */
+    .navbar {
+        width: 100%;
+        max-width: 100vw;
+        left: 0;
+        right: 0;
+    }
+    
+    /* Ensure containers don't overflow */
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 

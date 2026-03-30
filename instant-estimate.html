@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNest - Instant Repair Estimate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(34, 211, 238, 0.2);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 30px rgba(34, 211, 238, 0.4);
+            border-color: #22d3ee;
+        }
+        .step-active { background: #22d3ee !important; color: #0b1f3a !important; border: none !important; }
+        .step-inactive { background: #1e3a5f; color: #94a3b8; border: 2px solid #334155; }
+        .connector-active { background: #22d3ee !important; }
+        .price-glow {
+            box-shadow: 0 0 40px rgba(34, 211, 238, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-[#0b1f3a] text-white overflow-x-hidden">
+
+    <!-- Instant Estimate Section - Premium Interactive -->
+    <section id="pricing" class="py-20 px-6 relative overflow-hidden min-h-screen">
+        <!-- Animated Background Blobs -->
+        <div class="absolute top-20 left-10 w-72 h-72 rounded-full opacity-20 blur-3xl bg-cyan-400 animate-pulse"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 rounded-full opacity-15 blur-3xl bg-sky-400"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full opacity-10 blur-3xl bg-blue-400"></div>
+        
+        <div class="container mx-auto max-w-6xl relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4 text-white">
+                    Instant Repair <span class="text-cyan-400">Estimate</span>
+                </h2>
+                <p class="text-lg text-gray-300">Get an instant quote for your device repair in 3 simple steps</p>
+            </div>
+            
+            <!-- Progress Indicator -->
+            <div class="flex justify-center items-center mb-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center" id="step1Indicator">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all duration-500 step-active" id="step1Circle">1</div>
+                        <span class="ml-2 text-sm font-medium hidden sm:block text-cyan-400" id="step1Text">Brand</span>
+                    </div>
+                    <div class="w-16 h-1 rounded-full transition-all duration-500 bg-slate-700" id="connector1"></div>
+                    <div class="flex items-center opacity-50" id="step2Indicator">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all duration-500 step-inactive" id="step2Circle">2</div>
+                        <span class="ml-2 text-sm font-medium hidden sm:block text-gray-400" id="step2Text">Model</span>
+                    </div>
+                    <div class="w-16 h-1 rounded-full transition-all duration-500 bg-slate-700" id="connector2"></div>
+                    <div class="flex items-center opacity-50" id="step3Indicator">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all duration-500 step-inactive" id="step3Circle">3</div>
+                        <span class="ml-2 text-sm font-medium hidden sm:block text-gray-400" id="step3Text">Issue</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main App Container -->
+            <div class="relative overflow-hidden rounded-2xl min-h-[600px] glass-card">
+                
+                <!-- STEP 1: SELECT BRAND -->
+                <div id="step1" class="absolute inset-0 p-8 lg:p-12">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl lg:text-3xl font-bold text-white mb-2">Select Your Device</h3>
+                        <p class="text-gray-400">Choose your mobile brand to continue</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-4xl mx-auto">
+                        <!-- Apple -->
+                        <div class="brand-card group cursor-pointer rounded-xl p-6 transition-all duration-300 hover:scale-105 text-center glass-card glow-hover" onclick="selectBrand('Apple')" data-aos="fade-up" data-aos-delay="100">
+                            <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-white/10 group-hover:shadow-lg transition-all">
+                                <i class="fas fa-apple-alt text-3xl text-cyan-400"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-1">Apple</h4>
+                            <p class="text-sm text-gray-400">iPhone Repair</p>
+                        </div>
+                        
+                        <!-- Samsung -->
+                        <div class="brand-card group cursor-pointer rounded-xl p-6 transition-all duration-300 hover:scale-105 text-center glass-card glow-hover" onclick="selectBrand('Samsung')" data-aos="fade-up" data-aos-delay="150">
+                            <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-white/10 group-hover:shadow-lg transition-all">
+                                <i class="fas fa-mobile-alt text-3xl text-sky-400"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-1">Samsung</h4>
+                            <p class="text-sm text-gray-400">Galaxy Repair</p>
+                        </div>
+                        
+                        <!-- Google Pixel -->
+                        <div class="brand-card group cursor-pointer rounded-xl p-6 transition-all duration-300 hover:scale-105 text-center glass-card glow-hover" onclick="selectBrand('Google Pixel')" data-aos="fade-up" data-aos-delay="200">
+                            <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-white/10 group-hover:shadow-lg transition-all">
+                                <i class="fab fa-google text-3xl text-amber-400"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-1">Google Pixel</h4>
+                            <p class="text-sm text-gray-400">Pixel Repair</p>
+                        </div>
+                        
+                        <!-- OnePlus -->
+                        <div class="brand-card group cursor-pointer rounded-xl p-6 transition-all duration-300 hover:scale-105 text-center glass-card glow-hover" onclick="selectBrand('OnePlus')" data-aos="fade-up" data-aos-delay="250">
+                            <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-white/10 group-hover:shadow-lg transition-all">
+                                <i class="fas fa-mobile text-3xl text-pink-400"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-1">OnePlus</h4>
+                            <p class="text-sm text-gray-400">OnePlus Repair</p>
+                        </div>
+                        
+                        <!-- Xiaomi -->
+                        <div class="brand-card group cursor-pointer rounded-xl p-6 transition-all duration-300 hover:scale-105 text-center glass-card glow-hover" onclick="selectBrand('Xiaomi')" data-aos="fade-up" data-aos-delay="300">
+                            <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-white/10 group-hover:shadow-lg transition-all">
+                                <i class="fas fa-mobile-alt text-3xl text-emerald-400"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-1">Xiaomi</h4>
+                            <p class="text-sm text-gray-400">Mi & Redmi Repair</p>
+                        </div>
+                        
+                        <!-- OPPO -->
+                        <div class="brand-card group cursor-pointer rounded-xl p-6 transition-all duration-300 hover:scale-105 text-center glass-card glow-hover" onclick="selectBrand('OPPO')" data-aos="fade-up" data-aos-delay="350">
+                            <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-white/10 group-hover:shadow-lg transition-all">
+                                <i class="fas fa-mobile-alt text-3xl text-violet-400"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-1">OPPO</h4>
+                            <p class="text-sm text-gray-400">OPPO Repair</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- STEP 2: SELECT MODEL -->
+                <div id="step2" class="absolute inset-0 p-8 lg:p-12 translate-x-full opacity-0 pointer-events-none">
+                    <button onclick="goToStep(1)" class="absolute top-6 left-6 flex items-center space-x-2 text-gray-400 hover:text-cyan-400 transition-colors px-4 py-2 rounded-lg hover:bg-white/5">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back</span>
+                    </button>
+                    
+                    <div class="text-center mb-8 mt-4">
+                        <h3 class="text-2xl lg:text-3xl font-bold text-white mb-2">Select Model</h3>
+                        <p class="text-gray-400">Choose your <span id="selectedBrandDisplay" class="text-cyan-400 font-semibold"></span> model</p>
+                    </div>
+                    
+                    <div id="modelsGrid" class="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto"></div>
+                </div>
+                
+                <!-- STEP 3: SELECT ISSUE & ESTIMATE -->
+                <div id="step3" class="absolute inset-0 p-8 lg:p-12 translate-x-full opacity-0 pointer-events-none">
+                    <button onclick="goToStep(2)" class="absolute top-6 left-6 flex items-center space-x-2 text-gray-400 hover:text-cyan-400 transition-colors px-4 py-2 rounded-lg hover:bg-white/5">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back</span>
+                    </button>
+                    
+                    <div class="text-center mb-6 mt-4">
+                        <h3 class="text-2xl lg:text-3xl font-bold text-white mb-2">What's the Issue?</h3>
+                        <p class="text-gray-400">Select the problem with your <span id="selectedModelDisplay" class="text-cyan-400 font-semibold"></span></p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mb-6">
+                        <!-- Broken Screen -->
+                        <div class="issue-card group cursor-pointer rounded-xl p-5 transition-all duration-300 hover:scale-105 text-center glass-card glow-hover" onclick="selectIssue('screen')">
+                            <div class="w-14 h-14 rounded-full mx-auto mb-3 flex items-center justify-center bg-red-500/20">
+                                <i class="fas fa-mobile-alt text-2xl text-red-400"></i>
+                            </div>
+                            <h4 class="text-base font-bold text-white mb-1">Broken Screen</h4>
+                            <p class="text-xs text-gray-400">Cracked display</p>
+                        </div>
+                        
+                        <!-- Battery Issue -->
+                        <div class="issue-card group cursor-pointer rounded-xl p-5 transition-all duration-300 hover:scale-105 text-center glass-card glow-hover" onclick="selectIssue('battery')">
+                            <div class="w-14 h-14 rounded-full mx-auto mb-3 flex items-center justify-center bg-amber-500/20">
+                                <i class="fas fa-battery-quarter text-2xl text-amber-400"></i>
+                            </div>
+                            <h4 class="text-base font-bold text-white mb-1">Battery Issue</h4>
+                            <p class="text-xs text-gray-400">Not charging</p>
+                        </div>
+                        
+                        <!-- Water Damage -->
+                        <div class="issue-card group cursor-pointer rounded-xl p-5 transition-all duration-300 hover:scale-105 text-center glass-card glow-hover" onclick="selectIssue('water')">
+                            <div class="w-14 h-14 rounded-full mx-auto mb-3 flex items-center justify-center bg-blue-500/20">
+                                <i class="fas fa-tint text-2xl text-blue-400"></i>
+                            </div>
+                            <h4 class="text-base font-bold text-white mb-1">Water Damage</h4>
+                            <p class="text-xs text-gray-400">Liquid contact</p>
+                        </div>
+                        
+                        <!-- Charging Port -->
+                        <div class="issue-card group cursor-pointer rounded-xl p-5 transition-all duration-300 hover:scale-105 text-center glass-card glow-hover" onclick="selectIssue('charging')">
+                            <div class="w-14 h-14 rounded-full mx-auto mb-3 flex items-center justify-center bg-emerald-500/20">
+                                <i class="fas fa-plug text-2xl text-emerald-400"></i>
+                            </div>
+                            <h4 class="text-base font-bold text-white mb-1">Charging Port</h4>
+                            <p class="text-xs text-gray-400">Connection issue</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Price Estimate Box -->
+                    <div id="priceEstimateBox" class="max-w-md mx-auto rounded-xl p-6 text-center transition-all duration-500 opacity-0 scale-95 hidden">
+                        <p class="text-gray-300 mb-2">Estimated Repair Cost</p>
+                        <div class="text-4xl font-bold mb-2 text-cyan-400">$<span id="priceValue">0</span></div>
+                        <p class="text-sm text-gray-400 mb-4">For <span id="issueType" class="text-cyan-400"></span> on <span id="deviceInfo" class="text-cyan-400"></span></p>
+                        
+                        <button onclick="bookAppointment()" class="w-full py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2 bg-gradient-to-r from-cyan-400 to-sky-500 text-slate-900 price-glow">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Book Appointment</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize AOS
+        AOS.init({ duration: 800, easing: 'ease-out', once: true });
+        
+        // State Management
+        let state = { brand: '', model: '', issue: '', price: 0 };
+        let currentStep = 1;
+        
+        // Device Models Database
+        const deviceModels = {
+            'Apple': ['iPhone 11', 'iPhone 12', 'iPhone 13', 'iPhone 14', 'iPhone 15', 'iPhone 15 Pro'],
+            'Samsung': ['Galaxy S21', 'Galaxy S22', 'Galaxy S23', 'Galaxy S24', 'Galaxy A54', 'Galaxy A34'],
+            'Google Pixel': ['Pixel 6', 'Pixel 7', 'Pixel 8', 'Pixel 7a', 'Pixel 8 Pro', 'Pixel 6a'],
+            'OnePlus': ['OnePlus 9', 'OnePlus 10', 'OnePlus 11', 'OnePlus 12', 'Nord 3', 'Nord CE 3'],
+            'Xiaomi': ['Redmi Note 11', 'Redmi Note 12', 'Redmi Note 13', 'Mi 13', 'Mi 14', 'Poco X5'],
+            'OPPO': ['OPPO Reno 8', 'OPPO Reno 9', 'OPPO Reno 10', 'OPPO F23', 'OPPO A78', 'OPPO A98']
+        };
+        
+        // Price Matrix
+        const priceMatrix = {
+            'screen': { base: 120, multiplier: 1.2 },
+            'battery': { base: 50, multiplier: 1.0 },
+            'water': { base: 80, multiplier: 1.3 },
+            'charging': { base: 40, multiplier: 1.0 }
+        };
+        
+        // Step Navigation with GSAP
+        function goToStep(step) {
+            const direction = step > currentStep ? 1 : -1;
+            
+            // Animate current step out
+            gsap.to('#step' + currentStep, {
+                x: direction * -100 + '%',
+                opacity: 0,
+                duration: 0.6,
+                ease: 'power3.inOut',
+                onComplete: () => {
+                    document.getElementById('step' + currentStep).style.pointerEvents = 'none';
+                }
+            });
+            
+            // Animate new step in
+            const nextStep = document.getElementById('step' + step);
+            nextStep.style.pointerEvents = 'auto';
+            gsap.fromTo(nextStep, 
+                { x: direction * 100 + '%', opacity: 0 },
+                { x: '0%', opacity: 1, duration: 0.6, ease: 'power3.inOut', delay: 0.2 }
+            );
+            
+            currentStep = step;
+            updateProgress(step);
+        }
+        
+        // Update Progress Indicator
+        function updateProgress(step) {
+            const steps = [
+                { indicator: 'step1Indicator', circle: 'step1Circle', text: 'step1Text' },
+                { indicator: 'step2Indicator', circle: 'step2Circle', text: 'step2Text' },
+                { indicator: 'step3Indicator', circle: 'step3Circle', text: 'step3Text' }
+            ];
+            
+            steps.forEach((s, i) => {
+                const indicator = document.getElementById(s.indicator);
+                const circle = document.getElementById(s.circle);
+                const text = document.getElementById(s.text);
+                
+                if (i + 1 <= step) {
+                    indicator.classList.remove('opacity-50');
+                    circle.classList.add('step-active');
+                    circle.classList.remove('step-inactive');
+                    text.classList.add('text-cyan-400');
+                    text.classList.remove('text-gray-400');
+                } else {
+                    indicator.classList.add('opacity-50');
+                    circle.classList.remove('step-active');
+                    circle.classList.add('step-inactive');
+                    text.classList.remove('text-cyan-400');
+                    text.classList.add('text-gray-400');
+                }
+            });
+            
+            // Update connectors
+            document.getElementById('connector1').classList.toggle('connector-active', step >= 2);
+            document.getElementById('connector2').classList.toggle('connector-active', step >= 3);
+        }
+        
+        // Select Brand
+        function selectBrand(brand) {
+            state.brand = brand;
+            document.getElementById('selectedBrandDisplay').textContent = brand;
+            renderModels(brand);
+            goToStep(2);
+        }
+        
+        // Render Models for Selected Brand
+        function renderModels(brand) {
+            const models = deviceModels[brand] || [];
+            const grid = document.getElementById('modelsGrid');
+            grid.innerHTML = '';
+            
+            models.forEach((model, index) => {
+                const card = document.createElement('div');
+                card.className = 'model-card group cursor-pointer rounded-xl p-5 transition-all duration-300 hover:scale-105 text-center glass-card glow-hover';
+                card.onclick = () => selectModel(model);
+                card.innerHTML = `
+                    <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center bg-cyan-400/20">
+                        <i class="fas fa-mobile-alt text-xl text-cyan-400"></i>
+                    </div>
+                    <h4 class="text-base font-bold text-white">${model}</h4>
+                `;
+                
+                // Stagger animation
+                gsap.fromTo(card, 
+                    { opacity: 0, y: 20 },
+                    { opacity: 1, y: 0, duration: 0.4, delay: index * 0.05, ease: 'power2.out' }
+                );
+                
+                grid.appendChild(card);
+            });
+        }
+        
+        // Select Model
+        function selectModel(model) {
+            state.model = model;
+            document.getElementById('selectedModelDisplay').textContent = model;
+            goToStep(3);
+        }
+        
+        // Select Issue and Calculate Price
+        function selectIssue(issue) {
+            state.issue = issue;
+            
+            // Calculate price
+            const basePrice = priceMatrix[issue].base;
+            const multiplier = priceMatrix[issue].multiplier;
+            state.price = Math.round(basePrice * multiplier);
+            
+            // Update UI
+            const issueNames = {
+                'screen': 'Screen Replacement',
+                'battery': 'Battery Replacement',
+                'water': 'Water Damage Repair',
+                'charging': 'Charging Port Repair'
+            };
+            
+            document.getElementById('issueType').textContent = issueNames[issue];
+            document.getElementById('deviceInfo').textContent = `${state.brand} ${state.model}`;
+            
+            // Show price box with animation
+            const priceBox = document.getElementById('priceEstimateBox');
+            priceBox.classList.remove('hidden');
+            
+            gsap.to(priceBox, {
+                opacity: 1,
+                scale: 1,
+                duration: 0.5,
+                ease: 'back.out(1.7)'
+            });
+            
+            // Animate price counting
+            animatePrice(state.price);
+        }
+        
+        // Price Counting Animation
+        function animatePrice(targetPrice) {
+            const priceElement = document.getElementById('priceValue');
+            const duration = 1000;
+            const start = 0;
+            const startTime = performance.now();
+            
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeProgress = 1 - Math.pow(1 - progress, 3);
+                const current = Math.round(start + (targetPrice - start) * easeProgress);
+                
+                priceElement.textContent = current;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            
+            requestAnimationFrame(update);
+        }
+        
+        // Book Appointment
+        function bookAppointment() {
+            if (!state.brand || !state.model || !state.issue) {
+                alert('Please complete all steps first.');
+                return;
+            }
+            
+            const issueNames = {
+                'screen': 'Screen Replacement',
+                'battery': 'Battery Replacement',
+                'water': 'Water Damage Repair',
+                'charging': 'Charging Port Repair'
+            };
+            
+            alert(`✅ Appointment Request Submitted!\n\n📱 Device: ${state.brand} ${state.model}\n🔧 Service: ${issueNames[state.issue]}\n💰 Estimated Cost: $${state.price}\n\nOur team will contact you shortly!`);
+        }
+    </script>
+
+</body>
+</html>
