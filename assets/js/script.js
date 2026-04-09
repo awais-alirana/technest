@@ -35,11 +35,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeMobileMenu = document.getElementById('closeMobileMenu');
     
     mobileMenuBtn.addEventListener('click', function() {
-        mobileMenu.classList.add('active');
+        mobileMenu.classList.remove('hidden');
+        // Small delay to allow display:block to apply before adding active class for animation
+        setTimeout(() => {
+            mobileMenu.classList.add('active');
+        }, 10);
     });
     
     closeMobileMenu.addEventListener('click', function() {
         mobileMenu.classList.remove('active');
+        // Wait for animation to finish before hiding
+        setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+        }, 300);
     });
     
     // Close mobile menu when clicking on links
@@ -47,6 +55,10 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileLinks.forEach(link => {
         link.addEventListener('click', function() {
             mobileMenu.classList.remove('active');
+            // Wait for animation to finish before hiding
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
         });
     });
     

@@ -54,9 +54,9 @@
         
         /* Step Indicators */
         .step-active {
-            background: #22d3ee !important;
-            color: #0b1f3a !important;
-            border: none !important;
+            background: white !important;
+            color: var(--primary-color) !important;
+            border: 2px solid var(--primary-color) !important;
         }
         .step-inactive {
             background: #1e3a5f;
@@ -110,9 +110,9 @@
                 <!-- Desktop Navigation - Centered -->
                 <nav class="hidden lg:flex items-center justify-center space-x-10 text-lg font-medium absolute left-1/2 transform -translate-x-1/2">
                     <a href="#home" class="nav-link" style="color: var(--text-dark);">Home</a>
-                    <a href="#about" class="nav-link" style="color: var(--text-dark);">About</a>
-                    <a href="#services" class="nav-link" style="color: var(--text-dark);">Services</a>
-                    <a href="#contact" class="nav-link" style="color: var(--text-dark);">Contact</a>
+                    <a href="about.html" class="nav-link" style="color: var(--text-dark);">About</a>
+                    <a href="services.html" class="nav-link" style="color: var(--text-dark);">Services</a>
+                    <a href="contact.html" class="nav-link" style="color: var(--text-dark);">Contact</a>
                 </nav>
                 
                 <!-- Get Started Button -->
@@ -131,15 +131,15 @@
     </header>
     
     <!-- Mobile Menu -->
-    <div class="mobile-menu fixed top-0 right-0 w-80 h-full z-[60] p-6 shadow-2xl bg-white" id="mobileMenu">
+    <div class="mobile-menu fixed top-0 right-0 w-80 h-full z-[60] p-6 shadow-2xl bg-white hidden lg:hidden" id="mobileMenu">
         <button class="text-2xl mb-8" id="closeMobileMenu">
             <i class="fas fa-times"></i>
         </button>
         <div class="flex flex-col space-y-4">
             <a href="#home" class="nav-link py-2 text-black">Home</a>
-            <a href="#about" class="nav-link py-2 text-black">About</a>
-            <a href="#services" class="nav-link py-2 text-black">Services</a>
-            <a href="#contact" class="nav-link py-2 text-black">Contact</a>
+            <a href="about.html" class="nav-link py-2 text-black">About</a>
+            <a href="services.html" class="nav-link py-2 text-black">Services</a>
+            <a href="contact.html" class="nav-link py-2 text-black">Contact</a>
             <a href="#pricing" class="btn-glow px-6 py-2 rounded-full w-full text-center inline-block text-white">
                 Get Estimate
             </a>
@@ -490,9 +490,9 @@
                     <!-- Vertical Progress Indicator -->
                     <div class="flex flex-row lg:flex-col justify-center lg:justify-start space-x-4 lg:space-x-0 lg:space-y-6">
                         <div class="flex items-center space-x-3" id="step1Indicator">
-                            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold transition-all duration-500 step-active text-sm" id="step1Circle">1</div>
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold transition-all duration-500 step-active text-sm" id="step1Circle" style="background-color: white; color: var(--primary-color);">1</div>
                             <div class="hidden sm:block">
-                                <p class="font-semibold text-cyan-400 text-sm" id="step1Text">Select Brand</p>
+                                <p class="font-semibold text-white text-sm" id="step1Text">Select Brand</p>
                                 <p class="text-xs text-gray-400 hidden lg:block">Choose your device manufacturer</p>
                             </div>
                         </div>
@@ -532,7 +532,7 @@
                             
                             <div class="grid grid-cols-3 gap-3 max-w-lg mx-auto">
                                 <!-- Apple -->
-                                <div class="brand-card group cursor-pointer rounded-xl p-4 transition-all duration-300 hover:scale-105 text-center glass-card-premium" onclick="selectBrand('Apple')">
+                                <div class="brand-card group cursor-pointer rounded-xl p-4 text-center glass-card-premium" onclick="selectBrand('Apple')">
                                     <div class="w-12 h-12 rounded-full mx-auto mb-2 flex items-center justify-center bg-white/10 group-hover:shadow-lg transition-all">
                                         <i class="fas fa-apple-alt text-2xl text-cyan-400"></i>
                                     </div>
@@ -540,7 +540,7 @@
                                 </div>
                                 
                                 <!-- Samsung -->
-                                <div class="brand-card group cursor-pointer rounded-xl p-4 transition-all duration-300 hover:scale-105 text-center glass-card-premium" onclick="selectBrand('Samsung')">
+                                <div class="brand-card group cursor-pointer rounded-xl p-4 text-center glass-card-premium" onclick="selectBrand('Samsung')">
                                     <div class="w-12 h-12 rounded-full mx-auto mb-2 flex items-center justify-center bg-white/10 group-hover:shadow-lg transition-all">
                                         <i class="fas fa-mobile-alt text-2xl text-sky-400"></i>
                                     </div>
@@ -548,7 +548,7 @@
                                 </div>
                                 
                                 <!-- Google Pixel -->
-                                <div class="brand-card group cursor-pointer rounded-xl p-4 transition-all duration-300 hover:scale-105 text-center glass-card-premium" onclick="selectBrand('Google Pixel')">
+                                <div class="brand-card group cursor-pointer rounded-xl p-4 text-center glass-card-premium" onclick="selectBrand('Google Pixel')">
                                     <div class="w-12 h-12 rounded-full mx-auto mb-2 flex items-center justify-center bg-white/10 group-hover:shadow-lg transition-all">
                                         <i class="fab fa-google text-2xl text-amber-400"></i>
                                     </div>
@@ -556,7 +556,7 @@
                                 </div>
                                 
                                 <!-- OnePlus -->
-                                <div class="brand-card group cursor-pointer rounded-xl p-4 transition-all duration-300 hover:scale-105 text-center glass-card-premium" onclick="selectBrand('OnePlus')">
+                                <div class="brand-card group cursor-pointer rounded-xl p-4 text-center glass-card-premium" onclick="selectBrand('OnePlus')">
                                     <div class="w-12 h-12 rounded-full mx-auto mb-2 flex items-center justify-center bg-white/10 group-hover:shadow-lg transition-all">
                                         <i class="fas fa-mobile text-2xl text-pink-400"></i>
                                     </div>
@@ -564,7 +564,7 @@
                                 </div>
                                 
                                 <!-- Xiaomi -->
-                                <div class="brand-card group cursor-pointer rounded-xl p-4 transition-all duration-300 hover:scale-105 text-center glass-card-premium" onclick="selectBrand('Xiaomi')">
+                                <div class="brand-card group cursor-pointer rounded-xl p-4 text-center glass-card-premium" onclick="selectBrand('Xiaomi')">
                                     <div class="w-12 h-12 rounded-full mx-auto mb-2 flex items-center justify-center bg-white/10 group-hover:shadow-lg transition-all">
                                         <i class="fas fa-mobile-alt text-2xl text-emerald-400"></i>
                                     </div>
@@ -572,7 +572,7 @@
                                 </div>
                                 
                                 <!-- OPPO -->
-                                <div class="brand-card group cursor-pointer rounded-xl p-4 transition-all duration-300 hover:scale-105 text-center glass-card-premium" onclick="selectBrand('OPPO')">
+                                <div class="brand-card group cursor-pointer rounded-xl p-4 text-center glass-card-premium" onclick="selectBrand('OPPO')">
                                     <div class="w-12 h-12 rounded-full mx-auto mb-2 flex items-center justify-center bg-white/10 group-hover:shadow-lg transition-all">
                                         <i class="fas fa-mobile-alt text-2xl text-violet-400"></i>
                                     </div>
@@ -597,7 +597,7 @@
                         </div>
                         
                         <!-- STEP 3: SELECT ISSUE & ESTIMATE -->
-                        <div id="step3" class="step-container absolute inset-0 overflow-hidden" style="transform: translateX(100%); opacity: 0; pointer-events: none; z-index: 1;">
+                        <div id="step3" class="step-container absolute inset-0 overflow-hidden" style="transform: translateX(100%); opacity: 0; pointer-events: none; z-index: 5;">
                             <!-- Back button to Step 2 -->
                             <button onclick="goToStep(2)" class="absolute top-4 left-4 z-50 flex items-center space-x-2 text-gray-400 hover:text-cyan-400 transition-colors px-3 py-2 rounded-lg hover:bg-white/5 text-sm" style="pointer-events: auto;">
                                 <i class="fas fa-arrow-left"></i>
@@ -613,7 +613,7 @@
                                 
                                 <div id="issueCardsGrid" class="grid grid-cols-3 gap-3 max-w-lg mx-auto mb-4" style="pointer-events: auto;">
                                     <!-- Broken Screen -->
-                                    <div class="issue-card group cursor-pointer rounded-xl p-4 transition-all duration-300 hover:scale-105 text-center glass-card-premium" onclick="selectIssue('screen')">
+                                    <div class="issue-card group cursor-pointer rounded-xl p-4 text-center glass-card-premium" onclick="selectIssue('screen')">
                                         <div class="w-10 h-10 rounded-full mx-auto mb-2 flex items-center justify-center bg-red-500/20">
                                             <i class="fas fa-mobile-alt text-xl text-red-400"></i>
                                         </div>
@@ -622,7 +622,7 @@
                                     </div>
                                     
                                     <!-- Battery Issue -->
-                                    <div class="issue-card group cursor-pointer rounded-xl p-4 transition-all duration-300 hover:scale-105 text-center glass-card-premium" onclick="selectIssue('battery')">
+                                    <div class="issue-card group cursor-pointer rounded-xl p-4 text-center glass-card-premium" onclick="selectIssue('battery')">
                                         <div class="w-10 h-10 rounded-full mx-auto mb-2 flex items-center justify-center bg-amber-500/20">
                                             <i class="fas fa-battery-quarter text-xl text-amber-400"></i>
                                         </div>
@@ -631,7 +631,7 @@
                                     </div>
                                     
                                     <!-- Water Damage -->
-                                    <div class="issue-card group cursor-pointer rounded-xl p-4 transition-all duration-300 hover:scale-105 text-center glass-card-premium" onclick="selectIssue('water')">
+                                    <div class="issue-card group cursor-pointer rounded-xl p-4 text-center glass-card-premium" onclick="selectIssue('water')">
                                         <div class="w-10 h-10 rounded-full mx-auto mb-2 flex items-center justify-center bg-blue-500/20">
                                             <i class="fas fa-tint text-xl text-blue-400"></i>
                                         </div>
@@ -640,7 +640,7 @@
                                     </div>
                                     
                                     <!-- Charging Port -->
-                                    <div class="issue-card group cursor-pointer rounded-xl p-4 transition-all duration-300 hover:scale-105 text-center glass-card-premium" onclick="selectIssue('charging')">
+                                    <div class="issue-card group cursor-pointer rounded-xl p-4 text-center glass-card-premium" onclick="selectIssue('charging')">
                                         <div class="w-10 h-10 rounded-full mx-auto mb-2 flex items-center justify-center bg-emerald-500/20">
                                             <i class="fas fa-plug text-xl text-emerald-400"></i>
                                         </div>
@@ -651,7 +651,7 @@
                             </div>
                             
                             <!-- Price Estimate View (initially hidden off-screen to right) -->
-                            <div id="priceEstimateView" class="absolute inset-0 flex items-center justify-center p-4 lg:p-6" style="transform: translateX(100%);">
+                            <div id="priceEstimateView" class="absolute inset-0 flex items-center justify-center p-4 lg:p-6" style="transform: translateX(100%); opacity: 0; pointer-events: none;">
                                 <div class="relative max-w-sm w-full mx-auto rounded-xl p-6 text-center" style="background: rgba(34, 211, 238, 0.1); border: 2px solid #22d3ee; backdrop-filter: blur(10px);">
                                     <!-- Back to issues button -->
                                     <button onclick="showIssueSelection()" class="absolute top-3 left-3 flex items-center space-x-1 text-gray-400 hover:text-cyan-400 transition-colors px-2 py-1 rounded-lg hover:bg-white/5 text-xs">
@@ -754,13 +754,13 @@
                     indicator.classList.remove('opacity-50');
                     circle.classList.add('step-active');
                     circle.classList.remove('step-inactive');
-                    text.classList.add('text-cyan-400');
+                    text.classList.add('text-white');
                     text.classList.remove('text-gray-400');
                 } else {
                     indicator.classList.add('opacity-50');
                     circle.classList.remove('step-active');
                     circle.classList.add('step-inactive');
-                    text.classList.remove('text-cyan-400');
+                    text.classList.remove('text-white');
                     text.classList.add('text-gray-400');
                 }
             });
@@ -783,7 +783,7 @@
             
             models.forEach((model, index) => {
                 const card = document.createElement('div');
-                card.className = 'model-card group cursor-pointer rounded-xl p-5 transition-all duration-300 hover:scale-105 text-center glass-card-premium';
+                card.className = 'model-card group cursor-pointer rounded-xl p-5 text-center glass-card-premium';
                 card.onclick = () => selectModel(model);
                 card.innerHTML = `
                     <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center bg-cyan-400/20">
@@ -815,6 +815,9 @@
             document.getElementById('issueType').textContent = repairPrices[issue].name;
             document.getElementById('deviceInfo').textContent = estimateState.brand + ' ' + estimateState.model;
             
+            // Enable pointer events on price view before animation
+            document.getElementById('priceEstimateView').style.pointerEvents = 'auto';
+            
             // Animate issue selection view out to left
             gsap.to('#issueSelectionView', {
                 x: '-100%',
@@ -841,12 +844,15 @@
             estimateState.issue = '';
             estimateState.price = 0;
             
-            // Animate price estimate view out to right
+            // Animate price estimate view out to right and disable pointer events
             gsap.to('#priceEstimateView', {
                 x: '100%',
                 opacity: 0,
                 duration: 0.5,
-                ease: 'power3.inOut'
+                ease: 'power3.inOut',
+                onComplete: () => {
+                    document.getElementById('priceEstimateView').style.pointerEvents = 'none';
+                }
             });
             
             // Animate issue selection view back in from left
@@ -887,216 +893,8 @@
         }
     </script>
 
-    <!-- Reviews Section -->
-    <section class="py-16 sm:py-20 px-4 sm:px-6" style="background: var(--light-bg);">
-        <div class="container mx-auto">
-            <div class="text-center mb-12 sm:mb-16">
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
-                    Positive Reviews From
-                    <span class="block" style="color: var(--primary-color);">Customers</span>
-                </h2>
-                <p class="text-base sm:text-lg px-4" style="color: var(--text-light);">
-                    See what our happy customers say about their repair experience with TechNest.
-                </p>
-            </div>
-            
-            <!-- Testimonials Carousel -->
-            <div class="swiper testimonials-carousel pb-12">
-                <div class="swiper-wrapper">
-                    <!-- Testimonial 1 -->
-                    <div class="swiper-slide">
-                        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl h-full mx-2">
-                            <div class="flex mb-4">
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                            </div>
-                            <p style="color: var(--text-light);" class="mb-6 text-sm sm:text-base">
-                                "My iPhone screen was completely shattered after I dropped it. TechNest fixed it in just 2 hours and it looks brand new. Amazing service and very professional team!"
-                            </p>
-                            <div class="flex items-center">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4">
-                                <div>
-                                    <p class="font-semibold text-sm sm:text-base" style="color: var(--text-dark);">Michael Chen</p>
-                                    <p class="text-xs sm:text-sm" style="color: var(--text-light);">iPhone 14 Pro Repair</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 2 -->
-                    <div class="swiper-slide">
-                        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl h-full mx-2">
-                            <div class="flex mb-4">
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                            </div>
-                            <p style="color: var(--text-light);" class="mb-6 text-sm sm:text-base">
-                                "Water damage ruined my Samsung Galaxy. I thought all my data was lost forever, but TechNest recovered everything and repaired my phone. Best repair shop in town!"
-                            </p>
-                            <div class="flex items-center">
-                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4">
-                                <div>
-                                    <p class="font-semibold text-sm sm:text-base" style="color: var(--text-dark);">Sarah Williams</p>
-                                    <p class="text-xs sm:text-sm" style="color: var(--text-light);">Samsung S23 Ultra Repair</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 3 -->
-                    <div class="swiper-slide">
-                        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl h-full mx-2">
-                            <div class="flex mb-4">
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                            </div>
-                            <p style="color: var(--text-light);" class="mb-6 text-sm sm:text-base">
-                                "My laptop wouldn't turn on after a power surge. They diagnosed the issue quickly and replaced the motherboard at a very fair price. Highly recommend their computer repair service!"
-                            </p>
-                            <div class="flex items-center">
-                                <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Customer" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4">
-                                <div>
-                                    <p class="font-semibold text-sm sm:text-base" style="color: var(--text-dark);">David Rodriguez</p>
-                                    <p class="text-xs sm:text-sm" style="color: var(--text-light);">MacBook Pro Repair</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 4 -->
-                    <div class="swiper-slide">
-                        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl h-full mx-2">
-                            <div class="flex mb-4">
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                            </div>
-                            <p style="color: var(--text-light);" class="mb-6 text-sm sm:text-base">
-                                "Fast and reliable iPad repair service! My charging port was completely broken and They diagnosed the issue they had it working like new in under an Great prices too!"
-                            </p>
-                            <div class="flex items-center">
-                                <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Customer" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4">
-                                <div>
-                                    <p class="font-semibold text-sm sm:text-base" style="color: var(--text-dark);">Emily Thompson</p>
-                                    <p class="text-xs sm:text-sm" style="color: var(--text-light);">iPad Air 5 Repair</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 5 -->
-                    <div class="swiper-slide">
-                        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl h-full mx-2">
-                            <div class="flex mb-4">
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                            </div>
-                            <p style="color: var(--text-light);" class="mb-6 text-sm sm:text-base">
-                                "Dropped my Pixel in the pool and thought it was dead. These guys are miracle workers - saved all my photos and got my phone working perfectly again!"
-                            </p>
-                            <div class="flex items-center">
-                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Customer" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4">
-                                <div>
-                                    <p class="font-semibold text-sm sm:text-base" style="color: var(--text-dark);">James Anderson</p>
-                                    <p class="text-xs sm:text-sm" style="color: var(--text-light);">Google Pixel 7 Repair</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 6 -->
-                    <div class="swiper-slide">
-                        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl h-full mx-2">
-                            <div class="flex mb-4">
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                                <i class="fas fa-star" style="color: #ffd700;"></i>
-                            </div>
-                            <p style="color: var(--text-light);" class="mb-6 text-sm sm:text-base">
-                                "My daughter's laptop had a virus and was running extremely slow.They diagnosed the issue. TechNest cleaned it up and installed proper protection. Now it runs like new!"
-                            </p>
-                            <div class="flex items-center">
-                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Customer" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4">
-                                <div>
-                                    <p class="font-semibold text-sm sm:text-base" style="color: var(--text-dark);">Lisa Martinez</p>
-                                    <p class="text-xs sm:text-sm" style="color: var(--text-light);">Dell Laptop Repair</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Pagination Dots -->
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Testimonials Carousel Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            new Swiper('.testimonials-carousel', {
-                slidesPerView: 1,
-                spaceBetween: 20,
-                loop: true,
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: true
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                    dynamicBullets: true
-                },
-                breakpoints: {
-                    640: {
-                        slidesPerView: 1,
-                        spaceBetween: 20
-                    },
-                    768: {
-                        slidesPerView: 2,
-                        spaceBetween: 30
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 30
-                    }
-                }
-            });
-        });
-    </script>
-
     <!-- CTA Section -->
     <section class="py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden" style="background: linear-gradient(135deg, #0b1f3a 0%, #0f172a 50%, #1e3a5f 100%);">
-        <style>
-            .cta-btn {
-                box-shadow: none !important;
-                transition: none !important;
-            }
-            .cta-btn:hover,
-            .cta-btn:focus,
-            .cta-btn:active {
-                box-shadow: none !important;
-                transform: none !important;
-            }
-        </style>
         <div class="container mx-auto text-center relative z-10">
             <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
                 Ready to Fix Your Device?

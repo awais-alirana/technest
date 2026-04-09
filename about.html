@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TechNest</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="font-['Inter']">
+    <!-- Header -->
+    <header class="navbar fixed top-0 w-full z-50 px-6 py-6">
+        <div class="container mx-auto">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2 flex-shrink-0">
+                    <i class="fas fa-mobile-alt text-2xl" style="color: var(--primary-color);"></i>
+                    <span class="text-xl font-bold" style="color: var(--text-dark);">TechNest</span>
+                </div>
+                
+                <!-- Desktop Navigation - Centered -->
+                <nav class="hidden lg:flex items-center justify-center space-x-10 text-lg font-medium absolute left-1/2 transform -translate-x-1/2">
+                    <a href="index.html" class="nav-link" style="color: var(--text-dark);">Home</a>
+                    <a href="about.html" class="nav-link" style="color: var(--text-dark);">About</a>
+                    <a href="services.html" class="nav-link" style="color: var(--text-dark);">Services</a>
+                    <a href="contact.html" class="nav-link" style="color: var(--text-dark);">Contact</a>
+                </nav>
+                
+                <!-- Get Started Button -->
+                <div class="hidden lg:block flex-shrink-0">
+                    <a href="index.html#pricing" class="btn-glow px-6 py-2 rounded-full text-lg font-medium inline-block">
+                        Get Estimate
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-2xl relative z-50 cursor-pointer p-2 text-black" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed top-0 right-0 w-80 h-full z-[60] p-6 shadow-2xl bg-white hidden lg:hidden" id="mobileMenu">
+        <button class="text-2xl mb-8" id="closeMobileMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="flex flex-col space-y-4">
+            <a href="index.html" class="nav-link py-2 text-black">Home</a>
+            <a href="about.html" class="nav-link py-2 text-black active">About</a>
+            <a href="services.html" class="nav-link py-2 text-black">Services</a>
+            <a href="contact.html" class="nav-link py-2 text-black">Contact</a>
+            <a href="index.html#pricing" class="btn-glow px-6 py-2 rounded-full w-full text-center inline-block text-white">
+                Get Estimate
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section min-h-[60vh] flex items-center justify-center px-4 sm:px-6 lg:px-10 pt-[80px] relative overflow-hidden" style="background-image: url('assets/images/hero-1.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50"></div>
+        
+        <div class="container mx-auto relative z-10 text-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
+                About <span style="color: var(--primary-color);">TechNest</span>
+            </h1>
+            <!-- Breadcrumbs -->
+            <nav class="flex items-center justify-center text-sm mt-4" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-2">
+                    <li>
+                        <a href="index.html" class="hover:text-blue-400 transition-colors text-white/80">
+                            <i class="fas fa-home mr-1"></i> Home
+                        </a>
+                    </li>
+                    <li><i class="fas fa-chevron-right text-xs text-white/60"></i></li>
+                    <li class="font-semibold" style="color: var(--primary-color);">About Us</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="py-16 sm:py-20 px-4 sm:px-6" style="background: var(--light-bg);">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <!-- Image -->
+                <div data-aos="fade-right">
+                    <div class="bg-white rounded-2xl p-2 shadow-xl">
+                        <img src="assets/images/about-page.jpg" alt="TechNest Team" class="rounded-xl w-full">
+                    </div>
+                </div>
+                
+                <!-- Content -->
+                <div data-aos="fade-left">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 leading-tight" style="color: var(--text-dark);">
+                        Why Choose <span style="color: var(--primary-color);">TechNest?</span>
+                    </h2>
+                    <p class="text-sm sm:text-base mb-6 leading-relaxed" style="color: var(--text-light);">
+                        At TechNest, we believe in providing exceptional repair services with transparency and integrity. Our certified technicians use only genuine parts and the latest technology to ensure your devices are restored to their optimal condition.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0" style="background: var(--primary-color);">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold" style="color: var(--text-dark);">Certified Experts</h4>
+                                <p class="text-sm" style="color: var(--text-light);">Manufacturer trained technicians</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0" style="background: var(--primary-color);">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold" style="color: var(--text-dark);">Genuine Parts</h4>
+                                <p class="text-sm" style="color: var(--text-light);">Original components only</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0" style="background: var(--primary-color);">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold" style="color: var(--text-dark);">90-Day Warranty</h4>
+                                <p class="text-sm" style="color: var(--text-light);">On all repairs</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0" style="background: var(--primary-color);">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold" style="color: var(--text-dark);">Same-Day Service</h4>
+                                <p class="text-sm" style="color: var(--text-light);">Quick turnaround time</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="index.html#pricing" class="btn-glow px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-sm sm:text-base inline-block">
+                        Get Free Estimate
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-6 sm:py-8 px-4 sm:px-6" style="background: var(--primary-color);">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-center">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-2xl sm:text-3xl font-bold text-white mb-1 stat-number" data-target="10000" data-suffix="K+">0</div>
+                    <p class="text-xs sm:text-sm text-white opacity-80">Devices Repaired</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-2xl sm:text-3xl font-bold text-white mb-1 stat-number" data-target="15" data-suffix="+">0</div>
+                    <p class="text-xs sm:text-sm text-white opacity-80">Expert Technicians</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-2xl sm:text-3xl font-bold text-white mb-1 stat-number" data-target="98" data-suffix="%">0</div>
+                    <p class="text-xs sm:text-sm text-white opacity-80">Satisfaction Rate</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-2xl sm:text-3xl font-bold text-white mb-1 stat-number" data-target="10" data-suffix="">0</div>
+                    <p class="text-xs sm:text-sm text-white opacity-80">Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="py-16 sm:py-20 px-4 sm:px-6 bg-white";">
+        <div class="container mx-auto">
+            <div class="max-w-6xl mx-auto">
+                <!-- Badge -->
+                <div class="flex justify-center mb-3" data-aos="fade-up">
+                    <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full" style="background: rgba(34, 211, 238, 0.1); border: 2px solid var(--primary-color);">
+                        <i class="fas fa-bullseye" style="color: var(--primary-color);"></i>
+                        <p class="text-sm font-bold tracking-widest uppercase" style="color: var(--primary-color);">
+                            OUR MISSION
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Title -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold" style="color: var(--text-dark);">
+                        Making Technology <span style="color: var(--primary-color);">Accessible</span>
+                    </h2>
+                </div>
+                
+                <!-- Description -->
+                <div class="max-w-3xl mx-auto text-center mb-3" data-aos="fade-up" data-aos-delay="200">
+                    <p class="text-base sm:text-lg leading-relaxed" style="color: var(--text-light);">
+                        We provide affordable, high-quality repair services that extend device life.
+                    </p>
+                </div>
+                
+                <!-- Mission Values Cards Row -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="300">
+                    <!-- Value 1 -->
+                    <div class="rounded-2xl shadow-lg p-6 text-center" style="background: var(--light-bg);">
+                        <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style="background: var(--primary-color);">
+                            <i class="fas fa-leaf text-2xl text-white"></i>
+                        </div>
+                        <h4 class="font-bold mb-2" style="color: var(--text-dark);">Eco-Friendly</h4>
+                        <p class="text-sm" style="color: var(--text-light);">Reducing e-waste through repairs</p>
+                    </div>
+                    
+                    <!-- Value 2 -->
+                    <div class="rounded-2xl shadow-lg p-6 text-center" style="background: var(--light-bg);">
+                        <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style="background: var(--primary-color);">
+                            <i class="fas fa-hand-holding-heart text-2xl text-white"></i>
+                        </div>
+                        <h4 class="font-bold mb-2" style="color: var(--text-dark);">Affordable</h4>
+                        <p class="text-sm" style="color: var(--text-light);">Quality repairs at fair prices</p>
+                    </div>
+                    
+                    <!-- Value 3 -->
+                    <div class="rounded-2xl shadow-lg p-6 text-center" style="background: var(--light-bg);">
+                        <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style="background: var(--primary-color);">
+                            <i class="fas fa-users text-2xl text-white"></i>
+                        </div>
+                        <h4 class="font-bold mb-2" style="color: var(--text-dark);">Community</h4>
+                        <p class="text-sm" style="color: var(--text-light);">Serving our local community</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 sm:py-20 px-4 sm:px-6" style="background: var(--light-bg);">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <!-- Left Side: FAQ Content -->
+                <div data-aos="fade-right">
+                    <!-- Label -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 mb-4" style="border-color: var(--primary-color);">
+                        <i class="fas fa-question-circle text-sm" style="color:var(--primary-color);"></i>
+                        <p class="text-sm font-semibold tracking-widest uppercase" style="color: var(--text-dark);">
+                            HAVE QUESTIONS?
+                        </p>
+                    </div>
+                    
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6" style="color: var(--text-dark);">
+                        Frequently Asked <span style="color: var(--primary-color);">Questions</span>
+                    </h2>
+                    
+                    <!-- FAQ Items -->
+                    <div class="space-y-4">
+                        <!-- FAQ 1 -->
+                        <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden">
+                            <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between focus:outline-none" onclick="toggleFaq(this)">
+                                <span class="font-semibold text-sm sm:text-base" style="color: var(--text-dark);">How long does a typical repair take?</span>
+                                <i class="fas fa-plus transition-all duration-300 faq-icon" style="color: var(--primary-color);"></i>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-sm" style="color: var(--text-light);">Most repairs are completed within 2-4 hours. Screen replacements and battery changes often take less than an hour. For complex issues, we provide a time estimate after diagnosis.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 2 -->
+                        <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden">
+                            <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between focus:outline-none" onclick="toggleFaq(this)">
+                                <span class="font-semibold text-sm sm:text-base" style="color: var(--text-dark);">Do you offer warranty on repairs?</span>
+                                <i class="fas fa-plus transition-all duration-300 faq-icon" style="color: var(--primary-color);"></i>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-sm" style="color: var(--text-light);">Yes! We provide a 90-day warranty on all repairs. This covers any defects in parts or workmanship. If the same issue reoccurs within the warranty period, we'll fix it free of charge.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 3 -->
+                        <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden">
+                            <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between focus:outline-none" onclick="toggleFaq(this)">
+                                <span class="font-semibold text-sm sm:text-base" style="color: var(--text-dark);">What types of devices do you repair?</span>
+                                <i class="fas fa-plus transition-all duration-300 faq-icon" style="color: var(--primary-color);"></i>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-sm" style="color: var(--text-light);">We repair smartphones, tablets, laptops, and desktop computers. We work with all major brands including Apple, Samsung, Google, OnePlus, Xiaomi, OPPO, and more.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 4 -->
+                        <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden">
+                            <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between focus:outline-none" onclick="toggleFaq(this)">
+                                <span class="font-semibold text-sm sm:text-base" style="color: var(--text-dark);">Is there a diagnostic fee?</span>
+                                <i class="fas fa-plus transition-all duration-300 faq-icon" style="color: var(--primary-color);"></i>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-sm" style="color: var(--text-light);">No, we offer free diagnostics! Bring your device in and we'll identify the problem at no cost. You'll only pay if you decide to proceed with the repair.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 5 -->
+                        <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden">
+                            <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between focus:outline-none" onclick="toggleFaq(this)">
+                                <span class="font-semibold text-sm sm:text-base" style="color: var(--text-dark);">Do you use original parts?</span>
+                                <i class="fas fa-plus transition-all duration-300 faq-icon" style="color: var(--primary-color);"></i>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-sm" style="color: var(--text-light);">We use high-quality OEM (Original Equipment Manufacturer) parts or premium aftermarket parts that meet or exceed original specifications. We always inform you about the parts we're using.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side: FAQ Image -->
+                <div class="hidden lg:flex items-center justify-center" data-aos="fade-left">
+                    <div class="relative">
+                        <img src="assets/images/faq-img.jpg" alt="FAQ Illustration" class="w-full max-w-md h-[650px] object-contain" style="mix-blend-mode: multiply; filter: brightness(1.02);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Styles -->
+    <style>
+        .faq-answer {
+            display: none;
+        }
+        .faq-answer.show {
+            display: block;
+        }
+    </style>
+    
+    <!-- FAQ Toggle Script -->
+    <script>
+        // Open first FAQ by default on page load
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const firstFaq = document.querySelector('.faq-item');
+                if (firstFaq) {
+                    const answer = firstFaq.querySelector('.faq-answer');
+                    const icon = firstFaq.querySelector('.faq-icon');
+                    if (answer && icon) {
+                        answer.classList.add('show');
+                        icon.classList.remove('fa-plus');
+                        icon.classList.add('fa-times');
+                        console.log('First FAQ opened successfully');
+                    }
+                }
+            }, 100);
+        });
+        
+        function toggleFaq(button) {
+            console.log('FAQ clicked');
+            const faqItem = button.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = button.querySelector('.faq-icon');
+            
+            if (!answer || !icon) {
+                console.error('FAQ elements not found');
+                return;
+            }
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    const otherAnswer = item.querySelector('.faq-answer');
+                    const otherIcon = item.querySelector('.faq-icon');
+                    if (otherAnswer) otherAnswer.classList.remove('show');
+                    if (otherIcon) {
+                        otherIcon.classList.remove('fa-times');
+                        otherIcon.classList.add('fa-plus');
+                    }
+                }
+            });
+            
+            // Toggle current FAQ
+            if (answer.classList.contains('show')) {
+                answer.classList.remove('show');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-plus');
+                console.log('FAQ closed');
+            } else {
+                answer.classList.add('show');
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-times');
+                console.log('FAQ opened');
+            }
+        }
+    </script>
+    
+    <!-- Stats Counter Animation Script -->
+    <script>
+        // Animate stats numbers from 0 to target value
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-target'));
+                const suffix = stat.getAttribute('data-suffix') || '';
+                const duration = 2000; // 2 seconds
+                const step = target / (duration / 16); // 60fps
+                let current = 0;
+                
+                const updateNumber = () => {
+                    current += step;
+                    if (current < target) {
+                        // Format number
+                        if (target >= 1000) {
+                            stat.textContent = Math.floor(current / 1000) + 'K' + suffix.replace('K', '');
+                        } else {
+                            stat.textContent = Math.floor(current) + suffix;
+                        }
+                        requestAnimationFrame(updateNumber);
+                    } else {
+                        // Final value
+                        if (target >= 1000) {
+                            stat.textContent = (target / 1000) + 'K' + suffix.replace('K', '');
+                        } else {
+                            stat.textContent = target + suffix;
+                        }
+                    }
+                };
+                
+                updateNumber();
+            });
+        }
+        
+        // Use Intersection Observer to trigger animation when stats section is visible
+        const statsSection = document.querySelector('.stat-number')?.closest('section');
+        if (statsSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateStats();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(statsSection);
+        }
+    </script>
+
+    <!-- CTA Section -->
+    <section class="py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden" style="background: linear-gradient(135deg, #0b1f3a 0%, #0f172a 50%, #1e3a5f 100%);">
+        <div class="container mx-auto text-center relative z-10">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
+                Ready to Fix Your Device?
+            </h2>
+            <p class="text-base sm:text-lg text-white opacity-90 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
+                Get your device repaired by our expert technicians today. Fast, reliable, and affordable service guaranteed.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="index.html#pricing" class="cta-btn px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold bg-white text-sm sm:text-base" style="color: var(--primary-color);">
+                    <i class="fas fa-calculator mr-2"></i>Get Instant Estimate
+                </a>
+                <a href="contact.html" class="cta-btn px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold border-2 border-white text-white text-sm sm:text-base">
+                    <i class="fas fa-phone mr-2"></i>Contact Us
+                </a>
+            </div>
+        </div>
+        
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-48 h-48 sm:w-64 sm:h-64 bg-white opacity-10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-white opacity-10 rounded-full translate-x-1/2 translate-y-1/2"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-10 sm:py-12 px-4 sm:px-6" style="background: var(--dark-bg); color: white;">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-8">
+                <div class="col-span-2 md:col-span-1">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-mobile-alt text-xl sm:text-2xl" style="color: var(--primary-color);"></i>
+                        <span class="text-lg sm:text-xl font-bold">TechNest</span>
+                    </div>
+                    <p class="opacity-80 text-sm sm:text-base">Your trusted partner for electronic repair services. We bring your devices back to life.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-3 sm:mb-4 text-sm sm:text-base" style="color: var(--primary-color);">Quick Links</h4>
+                    <ul class="space-y-2 text-sm sm:text-base">
+                        <li><a href="index.html" class="opacity-80 hover:opacity-100 transition">Home</a></li>
+                        <li><a href="about.html" class="opacity-80 hover:opacity-100 transition">About</a></li>
+                        <li><a href="services.html" class="opacity-80 hover:opacity-100 transition">Services</a></li>
+                        <li><a href="contact.html" class="opacity-80 hover:opacity-100 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-3 sm:mb-4 text-sm sm:text-base" style="color: var(--primary-color);">Services</h4>
+                    <ul class="space-y-2 text-sm sm:text-base">
+                        <li><a href="services.html" class="opacity-80 hover:opacity-100 transition">Screen Repair</a></li>
+                        <li><a href="services.html" class="opacity-80 hover:opacity-100 transition">Battery Replace</a></li>
+                        <li><a href="services.html" class="opacity-80 hover:opacity-100 transition">Water Damage</a></li>
+                        <li><a href="services.html" class="opacity-80 hover:opacity-100 transition">Software Fix</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-3 sm:mb-4 text-sm sm:text-base" style="color: var(--primary-color);">Contact</h4>
+                    <ul class="space-y-2 opacity-80 text-sm sm:text-base">
+                        <li><i class="fas fa-phone mr-2"></i>+1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope mr-2"></i>info@technest.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>123 Tech Street, CA</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-6 sm:pt-8 text-center opacity-80 text-sm sm:text-base">
+                <p>&copy; 2024 TechNest. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenu.classList.add('active');
+            }, 10);
+        });
+
+        closeMobileMenu.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        });
+
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            });
+        });
+
+        // Navbar Background on Scroll
+        const navbar = document.querySelector('.navbar');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const navbarLogo = document.querySelector('.navbar .text-xl');
+        const mobileMenuBtnIcon = document.querySelector('#mobileMenuBtn i');
+        
+        // Set initial text colors based on page (about page has dark hero, so white text)
+        navLinks.forEach(link => {
+            link.style.color = '#ffffff';
+        });
+        if (navbarLogo) {
+            navbarLogo.style.color = '#ffffff';
+        }
+        if (mobileMenuBtnIcon) {
+            mobileMenuBtnIcon.style.color = '#ffffff';
+        }
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+                navbar.style.backdropFilter = 'blur(10px)';
+                
+                // Change text colors to black when scrolled
+                navLinks.forEach(link => {
+                    link.style.color = '#333333';
+                });
+                if (navbarLogo) {
+                    navbarLogo.style.color = '#333333';
+                }
+                if (mobileMenuBtnIcon) {
+                    mobileMenuBtnIcon.style.color = '#333333';
+                }
+            } else {
+                navbar.style.background = 'transparent';
+                navbar.style.boxShadow = 'none';
+                navbar.style.backdropFilter = 'none';
+                
+                // Change text colors to white when at top
+                navLinks.forEach(link => {
+                    link.style.color = '#ffffff';
+                });
+                if (navbarLogo) {
+                    navbarLogo.style.color = '#ffffff';
+                }
+                if (mobileMenuBtnIcon) {
+                    mobileMenuBtnIcon.style.color = '#ffffff';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
