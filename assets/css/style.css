@@ -816,6 +816,15 @@ body {
     background: var(--primary-color);
 }
 
+/* Testimonials Swiper - Allow smooth animations */
+.testimonials-swiper .swiper-wrapper {
+    transition-timing-function: ease-out !important;
+}
+
+.testimonials-swiper .swiper-slide {
+    transition: opacity 0.8s ease !important;
+}
+
 /* Mobile Menu */
 .mobile-menu {
     transform: translateX(100%);
