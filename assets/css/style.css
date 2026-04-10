@@ -876,35 +876,9 @@ body {
 
 /* Allow animations for specific elements */
 .animate-bounce-x {
-    animation: bounceRight 1s ease-in-out infinite !important;
+    animation: arrowBounceTransform 1s ease-in-out infinite !important;
 }
 
-/* Allow transform for animated elements */
-.animate-bounce-x {
-    transform: inherit !important;
-}
-
-/* NAVBAR - Restore navbar animations */
-.navbar,
-.navbar * {
-    transition: all 0.3s ease !important;
-}
-
-/* HERO IMAGE - Restore hover animation */
-.hero-image-container,
-.hero-image-container * {
-    transition: all 0.4s ease !important;
-}
-
-.hero-image-container:hover {
-    transform: translateY(-15px) scale(1.03) rotate(2deg) !important;
-}
-
-.hero-image-container:hover .hero-phone-image {
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* HERO SECTION BUTTON - Restore hover animation */
 .hero-section .btn-glow {
     transition: all 0.3s ease !important;
     position: relative;
@@ -934,18 +908,19 @@ body {
     height: 300px;
 }
 
-/* HERO BUTTON ARROW - Continuous bounce animation using margin instead of transform */
+/* HERO BUTTON ARROW - Continuous bounce animation using transform (no width change) */
 .hero-section .btn-glow .animate-bounce-x {
     display: inline-block;
-    animation: arrowBounceMargin 1s ease-in-out infinite !important;
+    animation: arrowBounceTransform 1s ease-in-out infinite !important;
+    will-change: transform;
 }
 
-@keyframes arrowBounceMargin {
+@keyframes arrowBounceTransform {
     0%, 100% {
-        margin-left: 0;
+        transform: translateX(0);
     }
     50% {
-        margin-left: 8px;
+        transform: translateX(6px);
     }
 }
 
