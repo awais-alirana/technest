@@ -25,14 +25,7 @@
     
     <!-- Premium Instant Estimate Section Styles -->
     <style>
-        /* No hover animation class */
-        .no-hover-animation,
-        .no-hover-animation * {
-            transition: none !important;
-            transform: none !important;
-        }
-        
-        /* Container Styles - No hover animation */
+        /* Container Styles */
         .estimate-container {
             background: rgba(15, 23, 42, 0.7);
             backdrop-filter: blur(20px);
@@ -888,13 +881,12 @@
                 alert('Please complete all steps first.');
                 return;
             }
-            
             alert('✅ Appointment Requested!\n\n📱 Device: ' + estimateState.brand + ' ' + estimateState.model + '\n🔧 Service: ' + repairPrices[estimateState.issue].name + '\n💰 Estimated: $' + estimateState.price + '\n\nOur team will contact you shortly!');
         }
     </script>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden" style="background: var(--light-bg);">
+    <section class="py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden" style="background: var(--light-bg);">
         <div class="container mx-auto">
             <!-- Section Header -->
             <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
@@ -905,10 +897,10 @@
                     </p>
                 </div>
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style="color: var(--text-dark);">
-                    What Our <span style="color: var(--primary-color);">Clients Say</span>
+                    What Our <span style="color: var(--primary-color);">Clients</span> Say
                 </h2>
                 <p class="text-base sm:text-lg max-w-2xl mx-auto" style="color: var(--text-light);">
-                    Don't just take our word for it - hear from our satisfied customers who trust us with their device repairs.
+                    Don't just take our word for it - hear from our satisfied customers who trust us with their devices
                 </p>
             </div>
 
@@ -919,22 +911,22 @@
                     <div class="swiper-slide">
                         <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg h-full" style="border-top: 4px solid var(--primary-color);">
                             <div class="flex items-center gap-1 mb-4">
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
                             </div>
-                            <p class="text-sm sm:text-base mb-6 italic" style="color: var(--text-light);">
-                                "Amazing service! My iPhone screen was cracked and they fixed it in under an hour. The price was very reasonable and the quality is perfect. Highly recommend!"
+                            <p class="text-sm sm:text-base mb-6" style="color: var(--text-light);">
+                                "TechNest fixed my iPhone screen in under an hour! The service was incredibly fast and professional. I couldn't believe how good as new my phone looked."
                             </p>
-                            <div class="flex items-center gap-4">
+                            <div class="flex items-center gap-3">
                                 <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold" style="background: var(--primary-color);">
                                     SJ
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-sm sm:text-base" style="color: var(--text-dark);">Sarah Johnson</h4>
-                                    <p class="text-xs sm:text-sm" style="color: var(--text-light);">iPhone 13 Repair</p>
+                                    <h4 class="font-semibold" style="color: var(--text-dark);">Sarah Johnson</h4>
+                                    <p class="text-sm" style="color: var(--text-light);">iPhone User</p>
                                 </div>
                             </div>
                         </div>
@@ -944,22 +936,22 @@
                     <div class="swiper-slide">
                         <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg h-full" style="border-top: 4px solid var(--primary-color);">
                             <div class="flex items-center gap-1 mb-4">
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
                             </div>
-                            <p class="text-sm sm:text-base mb-6 italic" style="color: var(--text-light);">
-                                "TechNest saved my laptop after water damage. I thought it was gone forever, but their team recovered all my data and got it working like new. Professional and fast!"
+                            <p class="text-sm sm:text-base mb-6" style="color: var(--text-light);">
+                                "Best repair service in town! My laptop was having battery issues and they diagnosed and fixed it the same day. The 90-day warranty gives me peace of mind too."
                             </p>
-                            <div class="flex items-center gap-4">
+                            <div class="flex items-center gap-3">
                                 <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold" style="background: var(--primary-color);">
-                                    MC
+                                    MD
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-sm sm:text-base" style="color: var(--text-dark);">Michael Chen</h4>
-                                    <p class="text-xs sm:text-sm" style="color: var(--text-light);">Laptop Water Damage</p>
+                                    <h4 class="font-semibold" style="color: var(--text-dark);">Michael Davis</h4>
+                                    <p class="text-sm" style="color: var(--text-light);">Laptop User</p>
                                 </div>
                             </div>
                         </div>
@@ -969,22 +961,22 @@
                     <div class="swiper-slide">
                         <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg h-full" style="border-top: 4px solid var(--primary-color);">
                             <div class="flex items-center gap-1 mb-4">
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
                             </div>
-                            <p class="text-sm sm:text-base mb-6 italic" style="color: var(--text-light);">
-                                "Best repair shop in town! My Samsung Galaxy battery was draining fast and they replaced it same day. Great customer service and warranty on repairs."
+                            <p class="text-sm sm:text-base mb-6" style="color: var(--text-light);">
+                                "I was skeptical at first, but TechNest completely restored my water-damaged Samsung. They saved all my photos and data. Absolutely amazing work!"
                             </p>
-                            <div class="flex items-center gap-4">
+                            <div class="flex items-center gap-3">
                                 <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold" style="background: var(--primary-color);">
-                                    ER
+                                    EM
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-sm sm:text-base" style="color: var(--text-dark);">Emily Rodriguez</h4>
-                                    <p class="text-xs sm:text-sm" style="color: var(--text-light);">Galaxy S22 Battery</p>
+                                    <h4 class="font-semibold" style="color: var(--text-dark);">Emily Martinez</h4>
+                                    <p class="text-sm" style="color: var(--text-light);">Samsung User</p>
                                 </div>
                             </div>
                         </div>
@@ -994,22 +986,22 @@
                     <div class="swiper-slide">
                         <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg h-full" style="border-top: 4px solid var(--primary-color);">
                             <div class="flex items-center gap-1 mb-4">
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
                             </div>
-                            <p class="text-sm sm:text-base mb-6 italic" style="color: var(--text-light);">
-                                "They fixed my iPad charging port quickly. The staff is friendly and explained everything clearly. Price was fair and the repair has held up perfectly for months!"
+                            <p class="text-sm sm:text-base mb-6" style="color: var(--text-light);">
+                                "I've used TechNest for both my personal phone and my business tablets. Their team is reliable, prices are fair, and the quality is outstanding every time."
                             </p>
-                            <div class="flex items-center gap-4">
+                            <div class="flex items-center gap-3">
                                 <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold" style="background: var(--primary-color);">
-                                    DW
+                                    JR
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-sm sm:text-base" style="color: var(--text-dark);">David Wilson</h4>
-                                    <p class="text-xs sm:text-sm" style="color: var(--text-light);">iPad Pro Charging Port</p>
+                                    <h4 class="font-semibold" style="color: var(--text-dark);">James Rodriguez</h4>
+                                    <p class="text-sm" style="color: var(--text-light);">Business Owner</p>
                                 </div>
                             </div>
                         </div>
@@ -1019,22 +1011,22 @@
                     <div class="swiper-slide">
                         <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg h-full" style="border-top: 4px solid var(--primary-color);">
                             <div class="flex items-center gap-1 mb-4">
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
                             </div>
-                            <p class="text-sm sm:text-base mb-6 italic" style="color: var(--text-light);">
-                                "Quick and professional! My MacBook needed a screen replacement and they completed it in 3 hours. The new screen looks factory fresh. Definitely coming back!"
+                            <p class="text-sm sm:text-base mb-6" style="color: var(--text-light);">
+                                "Dropped my iPad and thought it was gone forever. TechNest replaced the screen and it's working perfectly. The service was quick and the staff was super friendly!"
                             </p>
-                            <div class="flex items-center gap-4">
+                            <div class="flex items-center gap-3">
                                 <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold" style="background: var(--primary-color);">
-                                    AT
+                                    AW
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-sm sm:text-base" style="color: var(--text-dark);">Amanda Thompson</h4>
-                                    <p class="text-xs sm:text-sm" style="color: var(--text-light);">MacBook Screen Repair</p>
+                                    <h4 class="font-semibold" style="color: var(--text-dark);">Amanda Wilson</h4>
+                                    <p class="text-sm" style="color: var(--text-light);">iPad User</p>
                                 </div>
                             </div>
                         </div>
@@ -1044,28 +1036,29 @@
                     <div class="swiper-slide">
                         <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg h-full" style="border-top: 4px solid var(--primary-color);">
                             <div class="flex items-center gap-1 mb-4">
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
-                                <i class="fas fa-star" style="color: #fbbf24;"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
                             </div>
-                            <p class="text-sm sm:text-base mb-6 italic" style="color: var(--text-light);">
-                                "Excellent experience! Dropped my Pixel and shattered the screen. TechNest fixed it while I waited and even applied a free screen protector. 10/10 service!"
+                            <p class="text-sm sm:text-base mb-6" style="color: var(--text-light);">
+                                "My MacBook had a software issue that Apple couldn't fix without wiping everything. TechNest fixed it and saved all my files. These guys are real experts!"
                             </p>
-                            <div class="flex items-center gap-4">
+                            <div class="flex items-center gap-3">
                                 <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold" style="background: var(--primary-color);">
-                                    JK
+                                    TC
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-sm sm:text-base" style="color: var(--text-dark);">James Kim</h4>
-                                    <p class="text-xs sm:text-sm" style="color: var(--text-light);">Pixel 7 Screen</p>
+                                    <h4 class="font-semibold" style="color: var(--text-dark);">Tom Chen</h4>
+                                    <p class="text-sm" style="color: var(--text-light);">MacBook User</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Pagination -->
+                
+                <!-- Swiper Pagination -->
                 <div class="swiper-pagination"></div>
             </div>
         </div>
@@ -1078,7 +1071,7 @@
                 slidesPerView: 1,
                 spaceBetween: 20,
                 loop: true,
-                speed: 1000,
+                speed: 800,
                 effect: 'slide',
                 grabCursor: true,
                 autoplay: {
@@ -1135,7 +1128,7 @@
                 <a href="#pricing" class="cta-btn px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold bg-white text-sm sm:text-base" style="color: var(--primary-color);">
                     <i class="fas fa-calculator mr-2"></i>Get Instant Estimate
                 </a>
-                <a href="#contact" class="cta-btn px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold border-2 border-white text-white text-sm sm:text-base">
+                <a href="contact.html" class="cta-btn px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold border-2 border-white text-white text-sm sm:text-base">
                     <i class="fas fa-phone mr-2"></i>Contact Us
                 </a>
             </div>

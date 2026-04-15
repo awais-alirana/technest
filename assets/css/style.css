@@ -865,24 +865,6 @@ body {
     visibility: visible;
 }
 
-/* GLOBAL - Remove ALL hover animations from entire website */
-*,
-*::before,
-*::after {
-    transition: none !important;
-    animation: none !important;
-    transform: none !important;
-}
-
-*:hover,
-*:focus,
-*:active {
-    transition: none !important;
-    transform: none !important;
-    box-shadow: none !important;
-    animation: none !important;
-}
-
 /* Allow animations for specific elements */
 .animate-bounce-x {
     animation: arrowBounceTransform 1s ease-in-out infinite !important;
@@ -957,20 +939,7 @@ body {
     width: 100% !important;
 }
 
-/* CTA Section - Remove all hover animations */
-.cta-btn {
-    transition: none !important;
-    transform: none !important;
-    box-shadow: none !important;
-}
-
-.cta-btn:hover,
-.cta-btn:focus,
-.cta-btn:active {
-    transition: none !important;
-    transform: none !important;
-    box-shadow: none !important;
-}
+/* CTA Section - Buttons now support animations */
 
 /* First CTA button (Get Instant Estimate) - keep white background */
 a[href="#pricing"].cta-btn:hover {
